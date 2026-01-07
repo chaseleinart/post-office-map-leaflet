@@ -57,7 +57,7 @@
   // see more basemap options at https://leaflet-extras.github.io/leaflet-providers/preview/
 
   // Read markers data from data.csv
-  $.get('./data.csv', function(csvString) {
+  $.get('./Structures_Landmarks_v1_-2049195837199593647.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
@@ -67,7 +67,22 @@
     for (var i in data) {
       var row = data[i];
 
-      var marker = L.marker([row.Latitude, row.Longitude], {
+      var x = row.x
+      var y = row.y;
+      console.log([x, y]);
+
+      if (!x || !y) continue; // skip rows with missing data
+
+      // calculate point in xy space
+      var pointXY = L.point(x, y);
+      console.log("Point in x,y space: " + pointXY);
+
+      if(!pointXY[0] || !pointXY[1]) continue; // skip rows with invalid data
+
+      // convert to lat/lng space
+      var pointlatlng = map.layerPointToLatLng(pointXY);
+
+      var marker = L.marker([pointlatlng.lat, pointlatlng.lng], {
         opacity: 1
       }).bindPopup(row.Title);
       
