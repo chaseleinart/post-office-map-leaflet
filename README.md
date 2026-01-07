@@ -1,23 +1,12 @@
-# leaflet-map-csv
-Build a simple Leaflet map with point markers from a CSV file.
+# Post Office Map Leaflet
+Using Leaflet to render markers of every post office in the United States.
+Data sourced from the [Post Offices Esri Federal Dataset](https://hub.arcgis.com/datasets/fedmaps::post-offices/explore)
 
 ![Screenshot](leaflet-map-csv.png)
 
-## Demo
-https://handsondataviz.github.io/leaflet-map-csv/
-
-Sample data of select universities and colleges around CT by HandsOnDataViz.
-
-## Make your own
-
-1. Press **Use this template** button to create a copy of this repository in your own GitHub account.
-2. Put your point data data inside `data.csv`. The only relevant columns that will be read by the template
-are `Latitude`, `Longitude`, and `Title` (displayed in a popup). Sample data:
-```
-Title,Latitude,Longitude
-Trinity College,41.745167,-72.69263
-Wesleyan University,41.55709,-72.65691
-```
+## Easy Startup
+cd post-office-map-leaflet
+npx live-server
 
 For more information on customization, see [Leaflet documentation](https://leafletjs.com/).
 
@@ -33,8 +22,3 @@ https://handsondataviz.org/leaflet-maps-with-csv.html
 * [Searcheable Map Template](https://github.com/HandsOnDataViz/searchable-map-template-csv)
 * [Leaflet Maps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-maps-with-google-sheets)
 * [Leaflet Storymaps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-storymaps-with-google-sheets)
-
-
-## Easy Startup
-cd post-office-map-leaflet
-npx live-server
