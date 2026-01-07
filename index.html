@@ -77,14 +77,14 @@
       var pointXY = L.point(x, y);
       console.log("Point in x,y space: " + pointXY);
 
-      if(!pointXY[0] || !pointXY[1]) continue; // skip rows with invalid data
+      if(!pointXY.x || !pointXY.y) continue; // skip rows with invalid data
 
-      // convert to lat/lng space
-      var pointlatlng = map.layerPointToLatLng(pointXY);
+      // convert from projected coordinates (EPSG:3857) to lat/lng (EPSG:4326)
+      var pointlatlng = L.Projection.SphericalMercator.unproject(pointXY);
 
       var marker = L.marker([pointlatlng.lat, pointlatlng.lng], {
         opacity: 1
-      }).bindPopup(row.Title);
+      }).bindPopup(row['Official Name'] || row.Title);
       
       marker.addTo(map);
     }
