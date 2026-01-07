@@ -33,3 +33,8 @@ https://handsondataviz.org/leaflet-maps-with-csv.html
 * [Searcheable Map Template](https://github.com/HandsOnDataViz/searchable-map-template-csv)
 * [Leaflet Maps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-maps-with-google-sheets)
 * [Leaflet Storymaps with Google Sheets](https://github.com/HandsOnDataViz/leaflet-storymaps-with-google-sheets)
+
+
+## Easy Startup
+cd post-office-map-leaflet
+npx live-server
